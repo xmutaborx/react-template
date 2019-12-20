@@ -8,6 +8,7 @@
   <li>Router</li>
   <li>axios</li>
   <li>bootstrap</li>
+  <li>CSS transition</li>
 </ul>
 
 <p>just because I'm zaebalsya of doing it every time</p>
