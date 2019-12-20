@@ -14,9 +14,9 @@ const MainPage = () => {
     <div>
       <h1>Main page</h1>
       <div className="testBlock">
-        <button onClick={() => dispatch(counterSlice.actions.increment())}>+ 1</button>
-        <p>{counter}</p>
         <button onClick={() => dispatch(counterSlice.actions.decrement())}>- 1</button>
+        <p>store value: {counter}</p>
+        <button onClick={() => dispatch(counterSlice.actions.increment())}>+ 1</button>
       </div>
       <Link to="/second-page">Router link to /testpage</Link>
       <List items={items} />
