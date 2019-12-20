@@ -7,10 +7,11 @@ import {Provider} from 'react-redux';
 
 import './index.scss';
 import App from './components/App/App.jsx';
-import {counterSlice} from './store/slices';
+import { counterSlice, usersSlice } from './store/slices';
 
 const reducer = {
   counter: counterSlice.reducer,
+  users: usersSlice.reducer,
   // ...more reducers
 };
 

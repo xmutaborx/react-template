@@ -12,3 +12,11 @@ export const counterSlice = createSlice({
     }
   }
 });
+
+export const usersSlice = createSlice({
+  name: 'users',
+  initialState: [],
+  reducers: {
+    setUsers: (state, action) => state = action.payload
+  }
+});
