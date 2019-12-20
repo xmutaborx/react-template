@@ -12,8 +12,11 @@ const App = () => {
 
   useEffect(() => {
     axios.get(`https://api.myjson.com/bins/ukwwk`)
-      .then((response) => dispatch(usersSlice.actions.setUsers(response.data)))
-    console.log(`request completed`)
+      .then((response) => {
+        if (response.status === 200) {
+          dispatch(usersSlice.actions.setUsers(response.data))
+          console.log(`request completed`)
+      }})
   }, [dispatch])
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const List = ({items}) => {
+const List = ({ items }) => {
   return (
     <ul>
       {items.map((item) => <li key={item}>{item}</li>)}

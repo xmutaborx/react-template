@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router} from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import history from './history';
-import {configureStore} from '@reduxjs/toolkit';
-import {Provider} from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 
 import './index.scss';
 import App from './components/App/App.jsx';
