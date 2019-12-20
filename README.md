@@ -7,6 +7,7 @@
   <li>Sass</li>
   <li>Router</li>
   <li>axios</li>
+  <li>bootstrap</li>
 </ul>
 
 <p>just because I'm zaebalsya of doing it every time</p>
