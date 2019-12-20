@@ -5,7 +5,7 @@
   <li>Redux</li>
   <li>Redux-toolkit</li>
   <li>Sass</li>
-  <li>Rounter</li>
+  <li>Router</li>
 </ul>
 
 <p>just because I'm zaebalsya of doing it every time</p>
