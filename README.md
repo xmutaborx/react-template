@@ -6,6 +6,7 @@
   <li>Redux-toolkit</li>
   <li>Sass</li>
   <li>Router</li>
+  <li>axios</li>
 </ul>
 
 <p>just because I'm zaebalsya of doing it every time</p>
