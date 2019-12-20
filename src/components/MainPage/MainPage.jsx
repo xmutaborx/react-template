@@ -11,13 +11,21 @@ const MainPage = () => {
   const counter = useSelector(state => state.counter);
 
   return (
-    <div>
+    <div className="container">
       <h1>Main page</h1>
-      <div className="testBlock">
-        <button onClick={() => dispatch(counterSlice.actions.decrement())}>- 1</button>
-        <p>store value: {counter}</p>
-        <button onClick={() => dispatch(counterSlice.actions.increment())}>+ 1</button>
-      </div>
+        <div className="wrapper">
+          <div className="btn-group">
+            <button
+              className="btn btn-primary"
+              onClick={() => dispatch(counterSlice.actions.decrement())}
+            >- 1</button>
+            <p>store value: {counter}</p>
+            <button
+              className="btn btn-primary"
+              onClick={() => dispatch(counterSlice.actions.increment())}
+            >+ 1</button>
+          </div>
+        </div>
       <Link to="/second-page">Router link to /testpage</Link>
       <List items={items} />
     </div>
