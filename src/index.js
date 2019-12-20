@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router} from 'react-router-dom';
+import history from './history';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 
@@ -14,4 +16,11 @@ const reducer = {
 
 const store = configureStore({reducer});
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={history}>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById(`root`)
+);

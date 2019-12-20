@@ -1,23 +1,19 @@
 import React from 'react';
-import List from '../List/List.jsx';
-import {useDispatch, useSelector} from "react-redux";
-
-import {counterSlice} from '../../store/slices';
-
-const items = [`redux-toolkit`, `react-dom-router`, `sass`];
+import { Switch, Route, Link } from "react-router-dom";
+import MainPage from '../MainPage/MainPage.jsx';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
 
   return (
-    <div className="App">
-      <button onClick={() => dispatch(counterSlice.actions.increment())}>+ 1</button>
-      <button onClick={() => dispatch(counterSlice.actions.decrement())}>- 1</button>
-      <p>{counter}</p>
-      <h1>React Template</h1>
-      <List items={items} />
-    </div>
+    <Switch>
+      <Route exact path="/" component={MainPage} />
+      <Route exact path="/testpage">
+        <div>
+          <h1>This is test page</h1>
+          <Link to="/">back to main page</Link>
+          </div>
+      </Route>
+    </Switch>
   );
 }
 
