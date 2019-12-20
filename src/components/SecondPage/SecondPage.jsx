@@ -11,16 +11,28 @@ const SecondPage = () => {
       <h1>Second page</h1>
       <p className="alert alert-warning">TODO: cssTransition</p>
       <Link to="/">Back to Main page</Link>
-      <div>
+
       <CSSTransition
-        in={isVisible}
-        timeout={200}
         classNames="message"
+        timeout={500}
+        in={isVisible}
+        onEnter={() => console.log(`Enter`)}
+        onExited={() => console.log(`Exit`)}
       >
-        <p>This is test message for CSSTransition</p>
+        <p className="alert alert-secondary">This is test message for CSSTransition</p>
       </CSSTransition>
-      <button onClick={() => setVisible(true)}>TRIGGER</button>
-      </div>
+
+      {!isVisible ?
+        <button
+          className="btn btn-primary"
+          onClick={() => setVisible(true)}
+        >SHOW</button> :
+        <button
+          className="btn btn-primary"
+          onClick={() => setVisible(false)}
+        >HIDE</button>
+      }
+
     </div>
   )
 };
