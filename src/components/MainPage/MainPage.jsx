@@ -3,9 +3,8 @@ import List from '../List/List.jsx';
 import { useDispatch, useSelector } from "react-redux";
 import { counterSlice } from '../../store/slices';
 
+import { EXAMPLE_ITEMS } from '../../constants/constants';
 import Navbar from '../Navbar/Navbar.jsx';
-
-const items = [`redux-toolkit`, `react-dom-router`, `sass`, `react-router-dom`, `axios`, `hooks`];
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -29,17 +28,21 @@ const MainPage = () => {
               <button
                   className="btn btn-danger"
                   onClick={() => dispatch(counterSlice.actions.decrement())}
-              >- 1</button>
+              >
+                - 1
+              </button>
               <p>store value: {counter}</p>
               <button
                   className="btn btn-success"
                   onClick={() => dispatch(counterSlice.actions.increment())}
-              >+ 1</button>
+              >
+                + 1
+              </button>
             </div>
           </div>
           <div className="wrapper">
             <p className="text-success text-center">List component:</p>
-            <List items={items} />
+            <List items={EXAMPLE_ITEMS} />
           </div>
         </div>
       </main>

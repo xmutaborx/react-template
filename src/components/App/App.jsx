@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
+import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { usersSlice } from '../../store/slices';
-import axios from 'axios';
 
+
+import {URL, STATUS_CODE} from '../../constants/constants';
 import MainPage from '../MainPage/MainPage.jsx';
 import SecondPage from '../SecondPage/SecondPage.jsx';
 
@@ -11,13 +13,12 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get(`https://api.myjson.com/bins/ukwwk`)
+        axios.get(URL)
             .then((response) => {
-                if (response.status === 200) {
-                    dispatch(usersSlice.actions.setUsers(response.data))
-                    console.log(`request completed`)
+                if (response.status === STATUS_CODE.ok) {
+                    dispatch(usersSlice.actions.setUsers(response.data));
                 }})
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Switch>
