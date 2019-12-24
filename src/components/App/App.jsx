@@ -8,23 +8,23 @@ import MainPage from '../MainPage/MainPage.jsx';
 import SecondPage from '../SecondPage/SecondPage.jsx';
 
 const App = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios.get(`https://api.myjson.com/bins/ukwwk`)
-      .then((response) => {
-        if (response.status === 200) {
-          dispatch(usersSlice.actions.setUsers(response.data))
-          console.log(`request completed`)
-      }})
-  }, [dispatch])
+    useEffect(() => {
+        axios.get(`https://api.myjson.com/bins/ukwwk`)
+            .then((response) => {
+                if (response.status === 200) {
+                    dispatch(usersSlice.actions.setUsers(response.data))
+                    console.log(`request completed`)
+                }})
+    }, [dispatch])
 
-  return (
-    <Switch>
-      <Route exact path="/" component={MainPage} />
-      <Route exact path="/second-page" component={SecondPage} />
-    </Switch>
-  )
+    return (
+        <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/second-page" component={SecondPage} />
+        </Switch>
+    )
 };
 
 export default App;
